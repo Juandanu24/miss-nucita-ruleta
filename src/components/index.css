@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  font-size: 35px;
+  margin: 0;
+  color: white;
+  font-weight: 300;
+  margin: 25px 0;
+  margin-top: 35px;
+}
+
+.eslogan {
+  margin: 0;
+  color: #f2df81;
+  margin-bottom: 8px;
+  line-height: 32px;
+  font-size: 20px;
+  max-width: 400px;
+}
+
+.user {
+  margin: 0;
+  font-weight: 300;
+  color: #c9a179;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.button {
+  margin: 15px 0;
+  background-color: #1b301e;
+  color: #f2df81;
+  border: 2px solid #f2df81;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonDisabled {
+  opacity: 50%;
+  cursor: auto;
+}
+
+.buttonOk:hover {
+  background-color: #f2df81;
+  color: #1b301e;
+}
+
+.buttonOk:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(27, 48, 30, 0.5);
+}
+
+.oneTry {
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.logout-button {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff2e3b;
+}
+
+.logout-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 75, 92, 0.5);
+}

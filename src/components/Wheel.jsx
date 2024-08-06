@@ -12,6 +12,11 @@ const data = [
   { option: "15% DESC" },
   { option: "Regalo sorpresa" },
   { option: "20% DESC" },
+  { option: "10% DESC" },
+  { option: "Envío Gratis" },
+  { option: "15% DESC" },
+  { option: "Regalo sorpresa" },
+  { option: "20% DESC" },
 ];
 
 export const WheelComponent = () => {

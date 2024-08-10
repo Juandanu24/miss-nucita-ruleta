@@ -26,6 +26,7 @@ export const WheelComponent = () => {
   const [hasPlayed, setHasPlayed] = useState(false);
   const [prizeWon, setPrizeWon] = useState("");
   const [disabledButton, setDisabledButton] = useState(false);
+  const [dateOfSpin, setDateOfSpin] = useState("");
 
   const navigate = useNavigate();
 
@@ -37,6 +38,7 @@ export const WheelComponent = () => {
 
         if (docSnap.exists()) {
           setPrizeWon(docSnap.data().Premio);
+          setDateOfSpin(docSnap.data().Fecha_Giro);
           setHasPlayed(true);
           setDisabledButton(true);
         }
@@ -53,11 +55,14 @@ export const WheelComponent = () => {
 
     const newPrizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(newPrizeNumber);
+    const currentDate = new Date().toLocaleString();
     //Escribir en DB
     const docRef = doc(db, "users", user.uid);
     await setDoc(docRef, {
       Nombre: user.displayName,
       Premio: data[newPrizeNumber].option,
+      Correo: user.email,
+      Fecha_Giro: currentDate,
     });
   };
 
@@ -84,6 +89,14 @@ export const WheelComponent = () => {
         <h3 className="user">
           Usuario: <span className="name">{user.displayName}</span>
         </h3>
+      )}
+      {hasPlayed && (
+        <p style={{ color: "#c9a179" }}>
+          Fecha de giro:{" "}
+          <span style={{ color: "white", textTransform: "uppercase" }}>
+            {dateOfSpin}
+          </span>
+        </p>
       )}
       <Wheel
         mustStartSpinning={mustSpin}
